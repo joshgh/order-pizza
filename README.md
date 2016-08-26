@@ -1,22 +1,37 @@
-# _{Application Name}_
+# _Pizza Creator_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Lets a user create a pizza, 26 August 2016_
 
-#### By _**{List of contributors}**_
+#### By _**Joshua Huffman**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This website allows a user to create a pizza. The user is able to select a pizza size and choose which toppings to put on the pizza. The user will also be able to see the price calculated for the pizza which they choose._
+
+## Specifications
+
+* It should create a new pizza object
+  * Example input: new Pizza();
+  * Example output: _object Pizza_
+
+* It should be able to keep track of pizza size
+  * Example input: new Pizza("small");
+  * Example output: _object Pizza{size: "small"}_
+
+* It should be able to add toppings to the pizza
+  * Example input: Pizza.toppings.push("anchovies");
+  * Example output: _Pizza.toppings = ["anchovies"]_
+
+* It should be able to calculate and return the cost of the pizza
+ * Example input: Pizza.cost;
+ * Example output: 10
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* Visit https://github.com/joshgh/order-pizza
+* Clone the repository onto your local machine
+* Open index.html in your browser of choice
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
@@ -24,14 +39,14 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you have any comments or questions please contact me at j.m.huffman@gmail.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_This webpage uses the Bootstrap framework for some styling and the jquery javascript library for some page functionality_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*MIT License*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_Joshua Huffman_**
