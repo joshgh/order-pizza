@@ -7,7 +7,7 @@ function Pizza(size){
 Pizza.prototype.addTopping = function(topping){
   if (!this.toppings.includes(topping)){
     this.toppings.push(topping);
-    return 1;
+    return this.toppings;
   } else {
     return 0;
   }
