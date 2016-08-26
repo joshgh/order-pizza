@@ -24,18 +24,13 @@ Order.prototype.totalCost = function(){
   return cost;
 }
 
-function Pizza(size){
+function Pizza(size, toppings){
   this.pizzaSize = size;
-  this.toppings = [];
+  this.toppings = toppings;
 }
 
 Pizza.prototype.addTopping = function(topping){
-  if (!this.toppings.includes(topping)){
-    this.toppings.push(topping);
-    return this.toppings;
-  } else {
-    return 0;
-  }
+  this.toppings.push(topping);
 }
 
 Pizza.prototype.cost = function(){
@@ -47,8 +42,8 @@ Pizza.prototype.cost = function(){
   } else if (this.pizzaSize === "Extra Large"){
     currentCost += 8;
   }
-  if (this.toppings.length > 3){
-    currentCost += (this.toppings.length - 3) * 1.5;
+  if (this.toppings.length > 2){
+    currentCost += (this.toppings.length - 2) * 1.5;
   }
   return currentCost;
 }
@@ -57,8 +52,7 @@ $(document).ready(function() {
   function refreshDisplay(order){
     $(".output").text("");
     order.pizzaList.forEach(function(pizza, index){
-      $("ul#pizzaList").append("<li><span class='pizza'>Pizza #" + (index + 1) + "</span>" +
-                                " | <span class='remove'> Remove</span></li>");
+      $("ul#pizzaList").append("<li><span class='pizza'>Pizza #" + (index + 1) + "</span>" + " | <span class='remove'> Remove</span></li>");
       $("#pizzaList li .pizza").last().click(function(){
         $("li").removeClass("chosen");
         $(this).parent().addClass("chosen");
@@ -77,8 +71,7 @@ $(document).ready(function() {
   $("#submit").click(function(){
     var size =  $("input[name='size']:checked"). val();
     var toppings = $("#toppings").val();
-    var myPizza = new Pizza(size);
-    myPizza.toppings = toppings;
+    var myPizza = new Pizza(size, toppings);
     myOrder.addPizza(myPizza);
     refreshDisplay(myOrder);
   });

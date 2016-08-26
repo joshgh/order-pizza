@@ -9,14 +9,28 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="row jumbotron">
         <h1>Pizza!</h1>
         <h3>Place a pizza order below</h3>
         <h4>Select the size of pizza you want and which toppings you would like on it.</h4>
         <h4>Click the "Add Pizza" button and your pizza will appear in the list.</h4>
         <h4>Your total price will be displayed, click on a particular pizza to see more information about it.</h4>
       </div>
-      <div class="row">
+      <div class="row well">
+        <div class="col-md-4">
+          <p>Small: $10.00</p>
+          <p>Medium: $12.00</p>
+        </div>
+        <div class="col-md-4">
+          <p>Large: $15.00</p>
+          <p>Extra Large: $18.00</p>
+        </div>
+        <div class="col-md-4">
+          <p>Each pizza includes two toppings</p>
+          <p>Additional toppings are $1.50 each</p>
+        </div>
+      </div>
+      <div class="row well">
         <div class="col-md-4">
 
           <h4>Select a size</h4>
@@ -28,13 +42,15 @@
           <h4>Choose your toppings</h4>
           <p>(You can make multiple selections)</p>
           <select id="toppings" multiple>
-            <option value="Sausage">Sausage</option>
             <option value="Pepperoni">Pepperoni</option>
-            <option value="Mushroom">Mushrooms</option>
-            <option value="Pepper">Peppers</option>
+            <option value="Sausage">Sausage</option>
+            <option value="Onion">Onions</option>
+            <option value="Mushrooms">Mushrooms</option>
+            <option value="Peppers">Peppers</option>
+            <option value="Chicken">Chicken</option>
           </select><br>
 
-          <button id="submit" type="button">Add Pizza</button>
+          <button id="submit" type="button" class="btn btn-primary">Add Pizza</button>
         </div>
         <div class="col-md-4">
           <h4>Pizza List</h4>

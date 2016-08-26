@@ -1,35 +1,39 @@
-# _Pizza Creator_
+# _Order Pizza_
 
-#### _Lets a user create a pizza, 26 August 2016_
+#### _Lets a user make a pizza order, 26 August 2016_
 
 #### By _**Joshua Huffman**_
 
 ## Description
 
-_This website allows a user to create a pizza. The user is able to select a pizza size and choose which toppings to put on the pizza. The user will also be able to see the price calculated for the pizza which they choose._
+_This webpage allows a user to create pizzas by selecting the size of pizza and toppings to go on the pizza. The pizzas are added to the total order and the user is able to see the price of each pizza and the total price of the order. The user is also able to remove pizzas from the order if they wish._
 
 ## Specifications
 
-* It should create a new pizza object
+* It should create a new pizza
   * Example input: new Pizza();
-  * Example output: _object Pizza_
+  * Example output: _Pizza{}_
 
 * It should be able to keep track of pizza size
   * Example input: new Pizza("small");
-  * Example output: _object Pizza{size: "small"}_
+  * Example output: _Pizza{size: "small"}_
 
 * It should be able to add toppings to the pizza
-  * Example input: Pizza.toppings.push("anchovies");
+  * Example input: Pizza.addToppings("anchovies");
   * Example output: _Pizza.toppings = ["anchovies"]_
 
 * It should be able to calculate and return the cost of the pizza
- * Example input: Pizza.cost;
+ * Example input: Pizza.cost();
  * Example output: 10
+
+* It should be able to keep track of multiple pizzas
+  * Example input: create a new pizza when there is already one
+  * Desired behavior: add new pizza to a list instead of overwriting old one
 
 ## Setup/Installation Requirements
 
 * Visit https://github.com/joshgh/order-pizza
-* Clone the repository onto your local machine
+* Clone the repository onto your machine
 * Open index.html in your browser of choice
 
 
