@@ -1,3 +1,4 @@
+var pizzaList = [];
 
 function Pizza(size){
   this.pizzaSize = size;
@@ -31,9 +32,12 @@ Pizza.prototype.cost = function(){
 
 $(document).ready(function() {
   $("#submit").click(function(){
-    var size =  $("input[name='size']:checked"). val()
-    var toppings = [];
+    var size =  $("input[name='size']:checked"). val();
+    var toppings = $("#toppings").val();
+    console.log(toppings);
     var myPizza = new Pizza(size);
+    myPizza.toppings = toppings;
     console.log(myPizza);
+    pizzaList.push(myPizza);
   })
 });
