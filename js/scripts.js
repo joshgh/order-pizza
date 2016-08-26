@@ -16,14 +16,13 @@ Pizza.prototype.addTopping = function(topping){
 
 Pizza.prototype.cost = function(){
   var currentCost = 10;
-  if (this.pizzaSize === "m"){
+  if (this.pizzaSize === "Medium"){
     currentCost += 2;
-  } else if (this.pizzaSize === "l"){
+  } else if (this.pizzaSize === "Large"){
     currentCost += 5;
-  } else if (this.pizzaSize === "xl"){
+  } else if (this.pizzaSize === "Extra Large"){
     currentCost += 8;
   }
-
   if (this.toppings.length > 3){
     currentCost += (this.toppings.length - 3) * 1.5;
   }
@@ -34,16 +33,14 @@ $(document).ready(function() {
   $("#submit").click(function(){
     var size =  $("input[name='size']:checked"). val();
     var toppings = $("#toppings").val();
-    console.log(toppings);
     var myPizza = new Pizza(size);
     myPizza.toppings = toppings;
-    console.log(myPizza);
     pizzaList.push(myPizza);
-    $("ul#pizzaList").append("<li>Pizza</li>")
+    $("ul#pizzaList").append("<li>Pizza #" + pizzaList.length + "</li>")
     $("#pizzaList li").last().click(function(){
       $(".size").text(myPizza.pizzaSize);
       $(".toppings").text(myPizza.toppings);
-      $(".cost").text(myPizza.cost());
+      $(".cost").text(myPizza.cost().toFixed(2));
     })
   })
 });

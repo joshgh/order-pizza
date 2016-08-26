@@ -19,29 +19,30 @@
         <div class="col-md-4">
 
           <h4>Select a size</h4>
-          <input type="radio" name="size" value="s" checked>Small<br>
-          <input type="radio" name="size" value="m">Medium<br>
-          <input type="radio" name="size" value="l">Large<br>
-          <input type="radio" name="size" value="xl">Extra Large<br>
+          <input type="radio" name="size" value="Small" checked>Small<br>
+          <input type="radio" name="size" value="Medium">Medium<br>
+          <input type="radio" name="size" value="Large">Large<br>
+          <input type="radio" name="size" value="Extra Large">Extra Large<br>
 
           <h4>Choose your toppings</h4>
           <select id="toppings" multiple>
-            <option value="sausage">Sausage</option>
-            <option value="pepperoni">Pepperoni</option>
-            <option value="mushroom">Mushrooms</option>
-            <option value="pepper">Peppers</option>
+            <option value="Sausage">Sausage</option>
+            <option value="Pepperoni">Pepperoni</option>
+            <option value="Mushroom">Mushrooms</option>
+            <option value="Pepper">Peppers</option>
           </select><br>
 
           <button id="submit" type="button">Create Pizza</button>
         </div>
         <div class="col-md-4">
-          <h3>Pizza List</h3>
+          <h4>Pizza List</h4>
           <ul id="pizzaList"></ul>
         </div>
         <div class="col-md-4">
+          <h4>Pizza Info</h4>
           <p>Pizza Size: <span class="size"></span></p>
           <p>Pizza Toppings: <span class="toppings"></span></p>
-          <p>Pizza Cost: <span class="cost"></span></p>
+          <p>Pizza Cost: $<span class="cost"></span></p>
         </div>
       </div>
     </div>
