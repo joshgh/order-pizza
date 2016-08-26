@@ -5,7 +5,7 @@ function Order(){
 Order.prototype.addPizza = function(pizza){
   this.pizzaList.push(pizza);
   return this.pizzaList;
-}
+};
 
 Order.prototype.removePizza = function(pizza){
   this.pizzaList.forEach(function(element, index, list){
@@ -14,7 +14,7 @@ Order.prototype.removePizza = function(pizza){
     }
   });
   return this.pizzaList;
-}
+};
 
 Order.prototype.totalCost = function(){
   var cost = 0;
@@ -22,7 +22,7 @@ Order.prototype.totalCost = function(){
     cost += pizza.cost();
   });
   return cost;
-}
+};
 
 function Pizza(size, toppings){
   this.pizzaSize = size;
@@ -31,7 +31,7 @@ function Pizza(size, toppings){
 
 Pizza.prototype.addTopping = function(topping){
   this.toppings.push(topping);
-}
+};
 
 Pizza.prototype.cost = function(){
   var currentCost = 10;
@@ -46,7 +46,7 @@ Pizza.prototype.cost = function(){
     currentCost += (this.toppings.length - 2) * 1.5;
   }
   return currentCost;
-}
+};
 
 $(document).ready(function() {
   function refreshDisplay(order){
@@ -62,7 +62,7 @@ $(document).ready(function() {
         var toppingsString = "";
         pizza.toppings.forEach(function(topping){
           toppingsString += topping + ", ";
-        })
+        });
         $(".toppings").text(toppingsString);
         $(".cost").text(pizza.cost().toFixed(2));
       });
@@ -73,7 +73,7 @@ $(document).ready(function() {
     });
     $("#totalCost").text("Total Cost: $" + order.totalCost().toFixed(2));
   }
-  var myOrder = new Order;
+  var myOrder = new Order();
   $("#submit").click(function(){
     var size = $("input[name='size']:checked").val();
     var toppings = $("#toppings").val();
