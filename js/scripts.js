@@ -39,5 +39,11 @@ $(document).ready(function() {
     myPizza.toppings = toppings;
     console.log(myPizza);
     pizzaList.push(myPizza);
+    $("ul#pizzaList").append("<li>Pizza</li>")
+    $("#pizzaList li").last().click(function(){
+      $(".size").text(myPizza.pizzaSize);
+      $(".toppings").text(myPizza.toppings);
+      $(".cost").text(myPizza.cost());
+    })
   })
 });
