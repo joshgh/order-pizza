@@ -10,10 +10,11 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Pizza Maker</h1>
-        <h3>You can make a pizza!</h3>
-        <h4>Just choose from the options below and then click the "Create Pizza" button</h4>
-        <h4>Your pizza will the show up on the screen and the cost will be calculated</h4>
+        <h1>Pizza!</h1>
+        <h3>Place a pizza order below</h3>
+        <h4>Select the size of pizza you want and which toppings you would like on it.</h4>
+        <h4>Click the "Add Pizza" button and your pizza will appear in the list.</h4>
+        <h4>Your total price will be displayed, click on a particular pizza to see more information about it.</h4>
       </div>
       <div class="row">
         <div class="col-md-4">
@@ -25,6 +26,7 @@
           <input type="radio" name="size" value="Extra Large">Extra Large<br>
 
           <h4>Choose your toppings</h4>
+          <p>(You can make multiple selections)</p>
           <select id="toppings" multiple>
             <option value="Sausage">Sausage</option>
             <option value="Pepperoni">Pepperoni</option>
@@ -32,12 +34,12 @@
             <option value="Pepper">Peppers</option>
           </select><br>
 
-          <button id="submit" type="button">Create Pizza</button>
+          <button id="submit" type="button">Add Pizza</button>
         </div>
         <div class="col-md-4">
           <h4>Pizza List</h4>
-          <ul id="pizzaList"></ul>
-          <p>Total Cost: $<span id="totalCost" class="output"></span></p>
+          <ul id="pizzaList" class="output"></ul>
+          <p id="totalCost" class="output"></p>
         </div>
         <div class="col-md-4">
           <h4>Pizza Info</h4>
