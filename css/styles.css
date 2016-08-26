@@ -1,3 +1,16 @@
+body {
+  background-color: #ffbf00;
+}
+
+.jumbotron {
+  background-image: url("../img/pizza1.png");
+  color: white;
+}
+
+.well {
+  background-color: #ffe699;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
