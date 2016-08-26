@@ -40,6 +40,11 @@ Pizza.prototype.cost = function(){
 }
 
 $(document).ready(function() {
+  function refreshDisplay(order){
+    $(".output").text("");
+    $("#totalCost").text(order.totalCost().toFixed(2))
+  }
+
   var myOrder = new Order;
   $("#submit").click(function(){
     var size =  $("input[name='size']:checked"). val();
@@ -47,11 +52,21 @@ $(document).ready(function() {
     var myPizza = new Pizza(size);
     myPizza.toppings = toppings;
     myOrder.pizzaList.push(myPizza);
-    $("ul#pizzaList").append("<li>Pizza #" + myOrder.pizzaList.length + "</li>")
-    $("#pizzaList li").last().click(function(){
+    $("ul#pizzaList").append("<li><span class='pizza'>Pizza #" + myOrder.pizzaList.length + "</span>" +
+                              "<span class='remove'> Remove</span></li>")
+    $("#pizzaList li .pizza").last().click(function(){
       $(".size").text(myPizza.pizzaSize);
       $(".toppings").text(myPizza.toppings);
       $(".cost").text(myPizza.cost().toFixed(2));
+    })
+    $("#pizzaList li .remove").last().click(function(){
+      $(this).parent().remove();
+      myOrder.pizzaList.forEach(function(element, index){
+        if(element === myPizza){
+          myOrder.pizzaList.splice(index, 1);
+        }
+      })
+      refreshDisplay(myOrder);
     })
     $("#totalCost").text(myOrder.totalCost().toFixed(2));
   })
