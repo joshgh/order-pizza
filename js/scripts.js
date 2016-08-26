@@ -30,5 +30,10 @@ Pizza.prototype.cost = function(){
 }
 
 $(document).ready(function() {
-
+  $("#submit").click(function(){
+    var size =  $("input[name='size']:checked"). val()
+    var toppings = [];
+    var myPizza = new Pizza(size);
+    console.log(myPizza);
+  })
 });
