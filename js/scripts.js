@@ -4,6 +4,15 @@ function Pizza(size){
   this.toppings = [];
 }
 
+Pizza.prototype.addTopping = function(topping){
+  if (!this.toppings.includes(topping)){
+    this.toppings.push(topping);
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 Pizza.prototype.cost = function(){
   var currentCost = 10;
   if (this.pizzaSize === "m"){
@@ -17,6 +26,7 @@ Pizza.prototype.cost = function(){
   if (this.toppings.length > 3){
     currentCost += (this.toppings.length - 3) * 1.5;
   }
+  return currentCost;
 }
 
 $(document).ready(function() {
