@@ -51,6 +51,8 @@ Pizza.prototype.cost = function(){
 $(document).ready(function() {
   function refreshDisplay(order){
     $(".output").text("");
+    $("input[name='size']").first().prop("checked", true);
+    $("select option").prop("selected", false);
     order.pizzaList.forEach(function(pizza, index){
       $("ul#pizzaList").append("<li><span class='pizza'>Pizza #" + (index + 1) + "</span>" + " | <span class='remove'> Remove</span></li>");
       $("#pizzaList li .pizza").last().click(function(){
