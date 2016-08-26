@@ -7,6 +7,15 @@ Order.prototype.addPizza = function(pizza){
   return this.pizzaList;
 }
 
+Order.prototype.removePizza = function(pizza){
+  this.pizzaList.forEach(function(element, index, list){
+    if(element === pizza){
+      list.splice(index, 1);
+    }
+  });
+  return this.pizzaList;
+}
+
 Order.prototype.totalCost = function(){
   var cost = 0;
   this.pizzaList.forEach(function(pizza){
@@ -58,11 +67,7 @@ $(document).ready(function() {
         $(".cost").text(pizza.cost().toFixed(2));
       });
       $("#pizzaList li .remove").last().click(function(){
-        order.pizzaList.forEach(function(element, index){
-          if(element === pizza){
-            order.pizzaList.splice(index, 1);
-          }
-        });
+        order.removePizza(pizza);
         refreshDisplay(order);
       });
     });
