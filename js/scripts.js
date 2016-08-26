@@ -59,7 +59,11 @@ $(document).ready(function() {
         $("li").removeClass("chosen");
         $(this).parent().addClass("chosen");
         $(".size").text(pizza.pizzaSize);
-        $(".toppings").text(pizza.toppings);
+        var toppingsString = "";
+        pizza.toppings.forEach(function(topping){
+          toppingsString += topping + ", ";
+        })
+        $(".toppings").text(toppingsString);
         $(".cost").text(pizza.cost().toFixed(2));
       });
       $("#pizzaList li .remove").last().click(function(){
@@ -71,7 +75,7 @@ $(document).ready(function() {
   }
   var myOrder = new Order;
   $("#submit").click(function(){
-    var size =  $("input[name='size']:checked"). val();
+    var size = $("input[name='size']:checked").val();
     var toppings = $("#toppings").val();
     var myPizza = new Pizza(size, toppings);
     myOrder.addPizza(myPizza);
