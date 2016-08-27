@@ -60,8 +60,12 @@ $(document).ready(function() {
         $(this).parent().addClass("chosen");
         $(".size").text(pizza.pizzaSize);
         var toppingsString = "";
-        pizza.toppings.forEach(function(topping){
-          toppingsString += topping + ", ";
+        pizza.toppings.forEach(function(topping, index, array){
+          if (index < array.length - 1){
+            toppingsString += topping + ", ";
+          } else {
+            toppingsString += topping;
+          }
         });
         $(".toppings").text(toppingsString);
         $(".cost").text(pizza.cost().toFixed(2));
